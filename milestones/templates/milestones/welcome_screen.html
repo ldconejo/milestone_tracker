@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Milestone Tracking</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="content">
+                <h1>Milestone Tracking</h1>
+                {% for project,categories in results_dict.items %}
+                    <div>
+                        <h2>
+                            <a>{{ project }}</a>
+                        </h2>
+                        {% for category,milestones in categories.items %}
+                            {% if milestones %}
+                                <h3>{{category}}</h3>
+                                {% for milestone in milestones %}
+                                    <p>{{milestone.milestone}}</p>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
