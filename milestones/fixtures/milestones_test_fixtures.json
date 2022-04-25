@@ -4,7 +4,7 @@
         "model": "milestones.ProjectsTable",
         "fields": {
             "project": "PyCon Talk",
-            "launch_date": "2022-04-04"
+            "launch_date": "2022-04-24"
         }
     },
     {
