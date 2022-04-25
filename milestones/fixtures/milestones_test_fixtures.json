@@ -1,0 +1,28 @@
+[
+    {
+        "pk": 1,
+        "model": "milestones.ProjectsTable",
+        "fields": {
+            "project": "PyCon Talk",
+            "launch_date": "2022-04-04"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "milestones.ProjectsTable",
+        "fields": {
+            "project": "Portland Marathon",
+            "launch_date": "2022-10-02"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "milestones.MilestonesTable",
+        "fields": {
+            "milestone": "Start the project",
+            "due_date": "2022-04-20",
+            "project": "1",
+            "status": "0"
+        }
+    }
+]
