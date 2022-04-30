@@ -1,6 +1,5 @@
 from django.db import models
 
-# Added after this point
 # Create your models here.
 class ProjectsTable(models.Model):
     project = models.CharField(max_length=128, unique=True)
