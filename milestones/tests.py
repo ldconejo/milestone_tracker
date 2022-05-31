@@ -3,6 +3,7 @@ from django.test import TestCase
 # Create your tests here.
 from milestones.models import ProjectsTable, MilestonesTable
 
+
 class MilestonesTestCase(TestCase):
     fixtures = [
         "milestones_test_fixtures.json",

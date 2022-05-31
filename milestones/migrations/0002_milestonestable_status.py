@@ -6,13 +6,22 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('milestones', '0001_initial'),
+        ("milestones", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='milestonestable',
-            name='status',
-            field=models.CharField(choices=[(0, 'NOT_STARTED'), (1, 'IN_PROGRESS'), (2, 'COMPLETED'), (3, 'BLOCKED')], default='NOT_STARTED', max_length=20),
+            model_name="milestonestable",
+            name="status",
+            field=models.CharField(
+                choices=[
+                    (0, "NOT_STARTED"),
+                    (1, "IN_PROGRESS"),
+                    (2, "COMPLETED"),
+                    (3, "BLOCKED"),
+                ],
+                default="NOT_STARTED",
+                max_length=20,
+            ),
         ),
     ]

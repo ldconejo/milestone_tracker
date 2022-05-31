@@ -11,15 +11,31 @@ def main_view(request):
     for project in projects:
         results_dict[project.project] = {}
 
-        completed = MilestonesTable.objects.all().filter(project__exact=project, status__exact="2")
-        overdue = MilestonesTable.objects.all().filter(project__exact=project, due_date__lt=date.today()).exclude(status="2")
-        due_soon = MilestonesTable.objects.all().filter(project__exact=project, due_date__gte=date.today(), due_date__lt=in_two_weeks).exclude(status="2")
-        started = MilestonesTable.objects.all().filter(project__exact=project, status__exact="1")
+        completed = MilestonesTable.objects.all().filter(
+            project__exact=project, status__exact="2"
+        )
+        overdue = (
+            MilestonesTable.objects.all()
+            .filter(project__exact=project, due_date__lt=date.today())
+            .exclude(status="2")
+        )
+        due_soon = (
+            MilestonesTable.objects.all()
+            .filter(
+                project__exact=project,
+                due_date__gte=date.today(),
+                due_date__lt=in_two_weeks,
+            )
+            .exclude(status="2")
+        )
+        started = MilestonesTable.objects.all().filter(
+            project__exact=project, status__exact="1"
+        )
 
         results_dict[project.project]["completed"] = completed
         results_dict[project.project]["overdue"] = overdue
         results_dict[project.project]["due_soon"] = due_soon
         results_dict[project.project]["started"] = started
 
-    context = {'results_dict': results_dict}
-    return render(request, 'milestones/welcome_screen.html', context)
+    context = {"results_dict": results_dict}
+    return render(request, "milestones/welcome_screen.html", context)
