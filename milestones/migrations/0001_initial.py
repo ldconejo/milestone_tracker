@@ -8,25 +8,46 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='ProjectsTable',
+            name="ProjectsTable",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('project', models.CharField(max_length=128, unique=True)),
-                ('launch_date', models.DateField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("project", models.CharField(max_length=128, unique=True)),
+                ("launch_date", models.DateField()),
             ],
         ),
         migrations.CreateModel(
-            name='MilestonesTable',
+            name="MilestonesTable",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('milestone', models.CharField(max_length=128, unique=True)),
-                ('due_date', models.DateField()),
-                ('project', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='milestones.projectstable')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("milestone", models.CharField(max_length=128, unique=True)),
+                ("due_date", models.DateField()),
+                (
+                    "project",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="milestones.projectstable",
+                    ),
+                ),
             ],
         ),
     ]
